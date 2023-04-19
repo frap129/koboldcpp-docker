@@ -1,0 +1,13 @@
+version: '3.8'
+
+services: 
+  koboldcpp-webui:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: koboldcpp
+    environment:
+      PORT: 5001
+      MODEL: rwkv-169m-ggml-f16.bin # Put the file name of your model here
+    volumes:
+      - ./models:/app/models:Z,U
